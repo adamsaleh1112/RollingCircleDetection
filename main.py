@@ -1,4 +1,4 @@
-# IMPORT NUMPY AND CV2
+# IMPORT NUMPY, CIRCLE DETECT, AND CV2
 import numpy  # importing numpy, an array library that allows video data to be stored in arrays
 import cv2  # importing opencv-python, an image processing library that allows functions such as blur, cropping, etc.
 from circledetector import circle_detector # importing circle detector function in circledetector.py
