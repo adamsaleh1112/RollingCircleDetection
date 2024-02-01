@@ -10,8 +10,13 @@ def circle_detector(video_capture, windowname, minimum_radius, maximum_radius):
         # BLACK AND WHITE = IMAGE, BGR2GRAY
         bw = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)  # converts it to grayscale
 
+        # BLUR = B&W, 3x3
+        blur = cv2.blur(bw, (5, 5)) # blurs image
+
+        #edge = cv2.Canny(blur, 50, 150)
+
         # DETECTED = BW.HOUGHCIRCLES
-        detected = cv2.HoughCircles(bw, cv2.HOUGH_GRADIENT, 1.2, 100, minRadius=minimum_radius, maxRadius=maximum_radius)  # detects circles
+        detected = cv2.HoughCircles(blur, cv2.HOUGH_GRADIENT, 1.2, 100, param1=40, param2=100, minRadius=minimum_radius, maxRadius=maximum_radius)  # detects circles
 
         # IF CIRCLES DETECTED IS NOT 0
         if detected is not None:  # makes sure that it detected at least one
@@ -33,7 +38,7 @@ def circle_detector(video_capture, windowname, minimum_radius, maximum_radius):
 
                 # IMSHOW WINDOW
                 cv2.imshow(windowname, frame)  # creating window called circle that displays output image
-                cv2.waitKey(1)
+                cv2.waitKey(15)
 
     video_capture.release()
     cv2.destroyWindow(windowname)
