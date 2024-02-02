@@ -16,7 +16,7 @@ def circle_detector(video_capture, windowname, minimum_radius, maximum_radius):
         #edge = cv2.Canny(blur, 50, 150)
 
         # DETECTED = BW.HOUGHCIRCLES
-        detected = cv2.HoughCircles(blur, cv2.HOUGH_GRADIENT, 1.2, 100, param1=40, param2=100, minRadius=minimum_radius, maxRadius=maximum_radius)  # detects circles
+        detected = cv2.HoughCircles(blur, cv2.HOUGH_GRADIENT, 1.2, 100, param1=80, param2=80, minRadius=minimum_radius, maxRadius=maximum_radius)  # detects circles
 
         # IF CIRCLES DETECTED IS NOT 0
         if detected is not None:  # makes sure that it detected at least one

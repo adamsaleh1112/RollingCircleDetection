@@ -4,7 +4,7 @@ import cv2 # importing opencv-python, an image processing library that allows fu
 from circledetector import circle_detector # importing circle detector function in circledetector.py
 
 # VIDEO = CAN.MP4
-vc = cv2.VideoCapture("RollingCan3.mp4")  # loads video
+vc = cv2.VideoCapture("IMG_7353.MOV")  # loads video
 
 # CIRCLE_DETECT():
-circle_detector(vc, "Circle Video Detection Test", 180, 1000) # runs circle detector function in circledetector.py
+circle_detector(vc, "Circle Video Detection Test", 100, 1000) # runs circle detector function in circledetector.py
